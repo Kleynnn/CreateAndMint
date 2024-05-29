@@ -24,4 +24,9 @@ contract cappedToken is ERC20Capped {
     function burnToken(uint256 amount) public {
         _burn(msg.sender, amount);
     }
+
+    function transferToken(address to, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, to, amount);
+        return true;
+    }
 }
